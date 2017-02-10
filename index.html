@@ -136,18 +136,29 @@
         <p>She currently works in New York as Director of Digital Operations and Asset Management in the fashion industry where she manages a combination of physical and digital collections.</p>
       </div>
       <div class="contact">
-        <a class="button" href="mailto:lilli {dot} schestag {at} gmail {dot} com">Say Hello</a>
-        <a class="button" href="http://ughitsaaron.github.io/lillischestag.com/Lilli%20Schestag%20Resume.pdf">Resume</a>
+        <a class="button" name="Say Hello" onclick="trackClick(this)" href="mailto:lilli {dot} schestag {at} gmail {dot} com">Say Hello</a>
+        <a class="button" name="Resume" onclick="trackClick(this)" href="http://ughitsaaron.github.io/lillischestag.com/Lilli%20Schestag%20Resume.pdf">View My Resume</a>
       </div>
     </div>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>WebFont.load({ google: { families: ['Playfair Display', 'Raleway'] } });</script>
   <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-47847770-6', 'auto');
+    ga('send', 'pageview');
+
+    function trackClick(el) {
+      console.log(el);
+      ga('send', 'event', {
+        eventCategory: 'Engagement',
+        eventAction: 'click',
+        eventLabel: el.name
+      });
+    }
   </script>
 </body>
 </html>
